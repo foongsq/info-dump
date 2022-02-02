@@ -1,1 +1,9 @@
+title: "Computer Science Information"
 theme: jekyll-theme-slate
+
+header_pages:
+  - index.md
+
+markdown: kramdown
+
+repository: "foongsq/info-dump"
