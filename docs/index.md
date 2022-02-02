@@ -1,10 +1,71 @@
-# Home
+# DevOps
+
+DevOps is a set of practices that combines software development and IT operations. It aims to shorten the systems development life cycle and provide continuous delivery with high software quality.
+[Source](https://en.wikipedia.org/wiki/DevOps)
+
+![DevOps](./images/devops.png)
+
+**DevOps Automation: Continuous __**
+![DevOps Overview](./images/devops_overview.png)
+
+**CI/CD Pipeline**
+![CICD Pipeline](./images/cicd_pipeline.png)
+
+**DevOps Tools**
+![DevOps Tools](./images/devops_tools.png)
+
+[Source](https://www.youtube.com/watch?v=JHoy3lDZOfY)
+
+## Different environments
+![DevOps Environments](./images/devops_environments.png)
+
+But because there are so many different environments, might cause the issue of the code working on one environment, but not working on another environment. Hence we put our code into containers which are isolated and standardized environments so as to ensure that the code working on one environment will be working on other environments. Dev side will put code into container and ops side will use the container and do what they need to do.
+
+# Deployment
+
+All the code we write needs to be put onto a server, usually frontend code put onto one server, backend code put onto another server. A server is just a public computer. The act of putting a code onto a public computer is called deployment.
+
+## Continuous deployment
+
+### Virtualization and containerization
+
+Solves issue of code running on one env and not on another env. Containers wrap your software together with its dependencies, allowing it to be run on any system.
+
+### Configuration management
+
+Other dependencies such as Docker, Python that needs to be downloaded on the server can be set up using a script. 
+
+## Servers
+
+A server is a computer dedicated to provide specific services. Larger companies have 1 server dedicated for storing data, 1 server for serving web requests, 1 server for handling emails. But smaller companies usually have all 3 services on 1 server.
+
+Communicate between client and server or server and server through network.
+
+Desktop computers can't act as server because of hardware limitations and also software limitations because the OS only can handle a limited number of concurrent connections. There are specialized processors and RAM and OSes like Linux, Windows Server, macOS server etc.
+
+Different types of servers: web server, database server, email server.
+
+[Source](https://www.youtube.com/watch?v=UjCDWCeHCzY)
+
+## Cloud computing
+
+Traditionally, the physical servers are managed by individuals, organizations etc. If we wanted access to emails, we would have to maintain an email server. If there were any hardware or software issues with the server, it would need maintenance and might be hard to repair.
+
+Cloud computing is organizations that own lots of strong powerful servers in a data center, and offer them as a service. More cost efficient to use cloud usually.
+
+Efficient, reliable, scalable. Major cloud providers: Amazon Web Services, Microsoft Azure, Google Cloud Platform, IBM, Alibaba.
+
+Netflix uses AWS :O
+
+Different types of cloud computing: **Infrastructure as a Service (Iaas)** - you control software like applications, data, OS, middleware, runtime, while cloud provider control hardware like servers, virtualization, storage, networking etc. **Platform as a service (Paas)** - you only control applications and data, **Software as a service (Saas)** - everything on cloud provider, like google docs
+
+[Source](https://www.youtube.com/watch?v=_a6us8kaq0g)
 
 ## Concept: Web Communication
 
 **Why do we need a web server?**
 
-A web server like NGINX communicates with the outside world.
+A web server like NGINX communicates with the outside world (ie. calling external api or backend api). The frontend code lives on the web server.
 
 Some browser requests (like html forms) don't have simple responses, so the browser needs to invoke an external script to process the html form input to get a response. In reality, the browser tells the web server that it wants to process a html form, then the web server forks a process (which inherits parent's environment variables, and executes the process to process a html form). 
 
