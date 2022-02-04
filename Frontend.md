@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Frontend
+permalink: /frontend/
 ---
 
 * Table of Contents

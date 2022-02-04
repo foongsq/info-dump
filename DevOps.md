@@ -1,6 +1,7 @@
 ---
 layout: page
 title: DevOps
+permalink: /devops/
 ---
 * Table of Contents
 {:toc}
