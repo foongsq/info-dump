@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Backend | Technical Dump</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Backend" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/Backend.html" />
+<meta property="og:url" content="http://localhost:4000/Backend.html" />
+<meta property="og:site_name" content="Technical Dump" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Backend" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/Backend.html","headline":"Backend","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Technical Dump" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Technical Dump</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/Backend.html">Backend</a><a class="page-link" href="/DevOps.html">DevOps</a><a class="page-link" href="/Frontend.html">Frontend</a><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Backend</h1>
+  </header>
+
+  <div class="post-content">
+    <ul id="markdown-toc">
+  <li><a href="#best-practice-use-the-resource-name-as-the-api-route-name" id="markdown-toc-best-practice-use-the-resource-name-as-the-api-route-name">Best practice: Use the resource name as the api route name</a></li>
+  <li><a href="#best-practice-for-post-or-delete-methods-return-the-object-created-or-deleted-in-the-response" id="markdown-toc-best-practice-for-post-or-delete-methods-return-the-object-created-or-deleted-in-the-response">Best practice: For POST or DELETE methods, return the object created or deleted in the response</a></li>
+  <li><a href="#school-api-discovery-does-help-me-to-structure-my-work-better" id="markdown-toc-school-api-discovery-does-help-me-to-structure-my-work-better">School: API discovery does help me to structure my work better</a></li>
+  <li><a href="#technical-env-file-to-store-sensitive-information-such-as-private-keys" id="markdown-toc-technical-env-file-to-store-sensitive-information-such-as-private-keys">Technical: <code class="language-plaintext highlighter-rouge">.env</code> file to store sensitive information such as private keys</a></li>
+  <li><a href="#technical-requirementstxt-file-to-make-it-easier-for-other-developers-to-install-project-dependencies" id="markdown-toc-technical-requirementstxt-file-to-make-it-easier-for-other-developers-to-install-project-dependencies">Technical: <code class="language-plaintext highlighter-rouge">requirements.txt</code> file to make it easier for other developers to install project dependencies</a></li>
+  <li><a href="#best-practice-use-of-virtual-environment" id="markdown-toc-best-practice-use-of-virtual-environment">Best Practice: Use of virtual environment</a></li>
+  <li><a href="#concept-rest-apis" id="markdown-toc-concept-rest-apis">Concept: REST APIs</a></li>
+  <li><a href="#read-up-load-balancing" id="markdown-toc-read-up-load-balancing">Read up: Load balancing</a></li>
+  <li><a href="#technical-base64-encoding" id="markdown-toc-technical-base64-encoding">Technical: base64 encoding</a></li>
+  <li><a href="#read-up-middleware-in-nodejs-vs-decorators-in-flask" id="markdown-toc-read-up-middleware-in-nodejs-vs-decorators-in-flask">Read up: Middleware in node.js VS Decorators in flask</a></li>
+  <li><a href="#read-up-web-server-gateway-interface-wsgi" id="markdown-toc-read-up-web-server-gateway-interface-wsgi">Read up: Web Server Gateway Interface (WSGI)</a></li>
+  <li><a href="#technical-binary-large-object-blob" id="markdown-toc-technical-binary-large-object-blob">Technical: Binary large object (blob)</a></li>
+  <li><a href="#technical-cross-origin-resource-sharing-cors" id="markdown-toc-technical-cross-origin-resource-sharing-cors">Technical: Cross Origin Resource Sharing (CORS)</a></li>
+  <li><a href="#security-concern-exposing-mongodb-object-id-in-url-query" id="markdown-toc-security-concern-exposing-mongodb-object-id-in-url-query">Security concern: Exposing mongodb object id in url query</a></li>
+  <li><a href="#best-practice-mongodb-schema-design" id="markdown-toc-best-practice-mongodb-schema-design">Best Practice: MongoDB Schema Design</a></li>
+  <li><a href="#design-decision-embedding-for-inventory-items" id="markdown-toc-design-decision-embedding-for-inventory-items">Design Decision: Embedding for inventory items</a></li>
+  <li><a href="#design-decision-schema-validation-on-server-side" id="markdown-toc-design-decision-schema-validation-on-server-side">Design Decision: Schema Validation on server side</a></li>
+  <li><a href="#security-concern-storing-passwords-in-plaintext" id="markdown-toc-security-concern-storing-passwords-in-plaintext">Security concern: Storing passwords in plaintext</a></li>
+  <li><a href="#best-practice-use-of-blueprints-to-modularize-backend-code" id="markdown-toc-best-practice-use-of-blueprints-to-modularize-backend-code">Best Practice: Use of Blueprints to modularize backend code</a></li>
+  <li><a href="#technical-using-jwt-token-for-authentication" id="markdown-toc-technical-using-jwt-token-for-authentication">Technical: Using JWT token for authentication</a></li>
+  <li><a href="#best-practice-never-store-jwt-tokens-inside-localstorage-of-browser" id="markdown-toc-best-practice-never-store-jwt-tokens-inside-localstorage-of-browser">Best practice: Never store jwt tokens inside localStorage of browser</a></li>
+  <li><a href="#technical-cookies" id="markdown-toc-technical-cookies">Technical: Cookies</a></li>
+  <li><a href="#technical-babel" id="markdown-toc-technical-babel">Technical: Babel</a></li>
+  <li><a href="#best-practice-using-python-decorators-to-reduce-code-duplication-for-authentication" id="markdown-toc-best-practice-using-python-decorators-to-reduce-code-duplication-for-authentication">Best Practice: Using python decorators to reduce code duplication for authentication</a></li>
+</ul>
+
+<hr />
+
+<h2 id="best-practice-use-the-resource-name-as-the-api-route-name">Best practice: Use the resource name as the api route name</h2>
+
+<p>Eg. For a route that creates a new user in the database, use the route <code class="language-plaintext highlighter-rouge">/user</code> instead of <code class="language-plaintext highlighter-rouge">/createUser</code>.</p>
+
+<h2 id="best-practice-for-post-or-delete-methods-return-the-object-created-or-deleted-in-the-response">Best practice: For POST or DELETE methods, return the object created or deleted in the response</h2>
+
+<p>This is to make it easier for frontend people to debug.</p>
+
+<h2 id="school-api-discovery-does-help-me-to-structure-my-work-better">School: API discovery does help me to structure my work better</h2>
+
+<p>Looking at the high level features of the application and coming up with high level abstract APIs does indeed help me organize my work. This is because I can follow the abstract APIs to implement my concrete RESTful APIs. This gives me time and energy to focus on writing good API and adhering to good design principles, without having to worry about whether I’m missing any important features.</p>
+
+<h2 id="technical-env-file-to-store-sensitive-information-such-as-private-keys">Technical: <code class="language-plaintext highlighter-rouge">.env</code> file to store sensitive information such as private keys</h2>
+
+<p>I knew it was unsafe to put private keys and sensitive information on a git repository, so I looked for a way to store that information without commiting it directly to Github. I found that it was common practice to use a <code class="language-plaintext highlighter-rouge">.env</code> file for this purpose.</p>
+
+<h2 id="technical-requirementstxt-file-to-make-it-easier-for-other-developers-to-install-project-dependencies">Technical: <code class="language-plaintext highlighter-rouge">requirements.txt</code> file to make it easier for other developers to install project dependencies</h2>
+
+<p>When I was installing dependencies for the project, I wondered how I would have to repeat this process of installing the dependencies one by one again if I were to set up this project again. I looked online for a solution, and found that people often used this <code class="language-plaintext highlighter-rouge">requirements.txt</code> file to solve this issue.</p>
+
+<h2 id="best-practice-use-of-virtual-environment">Best Practice: Use of virtual environment</h2>
+
+<p>I chose to use a python virtual environment for the API section of this project to prevent the packages/libraries installed in this project to affect the packages/libraries used in other projects on my computer. This is a best practice when working with Python based projects especially.</p>
+
+<h2 id="concept-rest-apis">Concept: REST APIs</h2>
+
+<p>stands for <strong>Representational State Transfer</strong></p>
+<ul>
+  <li><strong>Client-server architecture:</strong> and communicate through HTTP</li>
+  <li><strong>Stateless communication:</strong> each request is independent of one another</li>
+  <li><strong>Cacheable data:</strong> Make data cacheable by including expiry time in response, or which data should not be cached. This is so that we can help to increase efficiency in our application.</li>
+  <li><strong>Uniform interface:</strong> Allow standardized means of communicating between server and client, usually using HTTP with URI resources, CRUD, and JSON. (This is to decouple client from server).</li>
+  <li><strong>Layered system:</strong> separates the different types of servers (eg. one for security, one for load balancing etc)</li>
+  <li><strong>Code on demand:</strong> ?</li>
+</ul>
+
+<h2 id="read-up-load-balancing">Read up: Load balancing</h2>
+
+<p>Load balancing is for distributing network traffic across multiple backend servers. I guess this is for larger websites that scale up enough to require multiple backend servers. But right now I don’t think this is very applicable to my application. (Maybe this is done during deployment? The place I deploy my server to will do load balancing?)</p>
+
+<h2 id="technical-base64-encoding">Technical: base64 encoding</h2>
+
+<p>base64 is a binary to text encoding scheme that represents binary data. <code class="language-plaintext highlighter-rouge">64</code> comes from the <code class="language-plaintext highlighter-rouge">radix-64 representation</code>. Binary to text encoding schemes are designed to carry data stored in binary formats across channels that only reliably support text content. In my project, I used base64 encoding to convert image files into text so that they can be passed from backend to frontend in JSON format.</p>
+
+<h2 id="read-up-middleware-in-nodejs-vs-decorators-in-flask">Read up: Middleware in node.js VS Decorators in flask</h2>
+
+<p>It’s like a middleman between 2 software applications, and provides services to them beyond those available from OS.</p>
+
+<p>Middleware functions have access to request, response and next function in request-response cycle. Middleware function is like the functions we define after the routes in flask (Except its in nodejs).</p>
+
+<p>Middleware classes in flask seem to be a different thing. Flask middleware is a WSGI middleware which operates by wrapping the Flask application instance.</p>
+
+<p>Use route decorators in flask instead. route decorators decorate a view function to register it with the given url rule and options.</p>
+
+<h2 id="read-up-web-server-gateway-interface-wsgi">Read up: Web Server Gateway Interface (WSGI)</h2>
+
+<p>Used to forward requests from a web server (such as Apache or nginx) to a backend python web application or framework.</p>
+
+<h2 id="technical-binary-large-object-blob">Technical: Binary large object (blob)</h2>
+
+<p>It is a collection of binary data stored as a single entity, usually is images, audio, or binary code.</p>
+
+<h2 id="technical-cross-origin-resource-sharing-cors">Technical: Cross Origin Resource Sharing (CORS)</h2>
+<p>A HTTP header mechanism that allows a server to indicate which origins other than its own that a browser can load resources from. Browsers usually make a preflight request to the server to check that the server will permit the request.</p>
+
+<h2 id="security-concern-exposing-mongodb-object-id-in-url-query">Security concern: Exposing mongodb object id in url query</h2>
+
+<p>Originally, I was concerned with exposing the mongodb object id in url query (when building endpoint for deleting store items), but upon some reading, I found that the object id is based upon the time of creation of the document, hence the information is not sensitive. Also, <a href="https://www.quora.com/What-if-any-are-the-security-risks-associated-with-exposing-a-MongoID-string-in-a-URL">someone on quora</a> mentioned that trying to hide the object id is a kind of “security through obscurity” practice, which we should not be depending on. We should instead focus on access control to the database.</p>
+
+<h2 id="best-practice-mongodb-schema-design">Best Practice: MongoDB Schema Design</h2>
+<ul>
+  <li>For relational, focus on: Don’t duplicate data</li>
+  <li>For NoSQL, no rules, no process, no algorithm, consider how to store data and query performance. (Focus on designing a schema uniquely suited to your application)</li>
+  <li>Embedding vs Referencing. Embedding is storing object within another object (same as join)
+    <ul>
+      <li>Pros of embedding: retrieve all data in a single query, can avoid expensive joins and can update all data with a single atomic operation.</li>
+      <li>Cons of embedding: large docs means more overhead, if you dont need all data at once, dont embed. 16MB document size limit</li>
+      <li>Pros of referencing: smaller docs, less likely to reach 16mb limit, no duplication of data, infrequently accessed data not accessed on every query</li>
+      <li>Cons of referencing: More queries required to retrieve all data</li>
+    </ul>
+  </li>
+  <li>Favor embedding unless there is a compelling reason not to. (Needing to access an object on its own is a compelling reason not to embed it)</li>
+  <li>Avoid joins (embedding?)</li>
+  <li>Arrays should not grow without bound</li>
+  <li>One to one: Use key value pairs</li>
+  <li>One to few: Prefer embedding</li>
+  <li>One to many: Prefer referencing</li>
+  <li>One to squillions: Prefer referencing</li>
+</ul>
+
+<h2 id="design-decision-embedding-for-inventory-items">Design Decision: Embedding for inventory items</h2>
+
+<p>After learning about best practices for MongoDB Schema design, I decided to use embedding for inventory items.</p>
+
+<p>Pros:</p>
+<ul>
+  <li>Can retrieve all data in a single query</li>
+  <li>Shouldnt have too many items in the inventory</li>
+  <li>We wont have to retrieve items 1 by 1 so there is not much incentive to use referencing.</li>
+</ul>
+
+<p>Cons:</p>
+<ul>
+  <li>might exceed 16MB document limit (especially since we are storing images inside the JSON too)
+    <ul>
+      <li>0.2KB for a document with imgUrl</li>
+      <li>about 50KB for a document with base64Img, depends on size of image I think</li>
+      <li>Can get around this by compressing the image before storing</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="design-decision-schema-validation-on-server-side">Design Decision: Schema Validation on server side</h2>
+
+<p>Upon some reading, I decided not to focus too much on schema validation on the server side for this project. This is because input validation will already be done on the client side for user experience purposes and the client side will be sending the correct data to the API. I am able to do this since this is a small project and I am the only developer involved. However, if there were separate people working on the frontend and backend, I would definitely prioritize schema validation on server side more.</p>
+
+<h2 id="security-concern-storing-passwords-in-plaintext">Security concern: Storing passwords in plaintext</h2>
+
+<p>Storing passwords in plaintext is really bad and violates our users privacy as anyone who has access to the database can see the passwords. Hence, we have to hash the passwords before storing it into our database. I chose to use the passlib library which has no known weaknesses at the time of writing. (Use <code class="language-plaintext highlighter-rouge">.verify()</code> method instead of <code class="language-plaintext highlighter-rouge">==</code> to compare whether password matches to prevent timing attacks)</p>
+
+<h2 id="best-practice-use-of-blueprints-to-modularize-backend-code">Best Practice: Use of Blueprints to modularize backend code</h2>
+
+<p><a href="https://realpython.com/flask-blueprint/">Useful explanation of blueprints</a></p>
+
+<h2 id="technical-using-jwt-token-for-authentication">Technical: Using JWT token for authentication</h2>
+
+<p>When someone logs in successfully, server will sign a jwt token and send it to the client. Client can then send that jwt token together with requests so that they can get access to routes that require authentication. Server will verify that token is valid, then send data/resources back.</p>
+
+<p>A jwt token is actually made of header, payload and secret. Payload is somewhat of a hash of certain info we put in, eg user id, admin role etc… and then it is signed with a secret key that only the server should know. Signature prevents tampering because when attacker changes role, signature will no longer match, and they need the secret key in order to sign it properly.</p>
+
+<p>The reason why we need JWT tokens is to prevent us from having to collect username and password every time someone wants to request for a resource. We work around it by using a session id. but session id doesnt scale because if we have multiple servers behind a load balancer, the different servers wont know what session ids other servers issued.</p>
+
+<p><a href="https://medium.com/swlh/why-do-we-need-the-json-web-token-jwt-in-the-modern-web-8490a7284482">Good explanation about JWT tokens</a></p>
+
+<h2 id="best-practice-never-store-jwt-tokens-inside-localstorage-of-browser">Best practice: Never store jwt tokens inside localStorage of browser</h2>
+
+<p>This is because localStorage or sessionStorage is accessible by any script inside your page, so a XSS attack can give a hacker access to your token, and compromise authenticity. Instead, store it in a httpOnly cookie, which is a special kind of cookie that is only sent in http reqests to the server, and it is <strong>never accessible</strong> from javascript running in the browser.</p>
+
+<p><a href="https://blog.logrocket.com/jwt-authentication-best-practices/">JWT best practices</a></p>
+
+<h2 id="technical-cookies">Technical: Cookies</h2>
+
+<p>A cookie is a piece of data that your web server can set, that will be then stored by the user’s web browser and sent back to the server on any future requests that browser makes to the same server as long as the cookie is valid and applicable to the request being made. Cookies are a <strong>state management</strong> mechanism for HTTP.</p>
+
+<p>Need to use a HTTP proxy also because since we are now sending the token in a cookie, we need to run the 2 apps on the same port. (because cookies can only go to origins from which they came)</p>
+
+<p><a href="https://stackoverflow.com/questions/39810741/how-to-store-a-jwt-token-inside-an-http-only-cookie">Cookie explanation</a></p>
+
+<p><a href="https://medium.com/@ryanchenkie_40935/react-authentication-how-to-store-jwt-in-a-cookie-346519310e81">Cookie implementation</a></p>
+
+<p><a href="https://medium.com/bb-tutorials-and-thoughts/vue-js-how-to-proxy-to-backend-server-a562bad965eb">Set up HTTP Proxy for Vue</a></p>
+
+<h2 id="technical-babel">Technical: Babel</h2>
+
+<p>Babel is a JavaScript compiler. Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments. Here are the main things Babel can do for you:</p>
+<ul>
+  <li>Transform syntax</li>
+  <li>Polyfill features that are missing in your target environment (through a third-party polyfill such as core-js)</li>
+  <li>Source code transformations (codemods)</li>
+</ul>
+
+<p><a href="https://babeljs.io/docs/en/#babel-is-a-javascript-compiler">Source</a></p>
+
+<h2 id="best-practice-using-python-decorators-to-reduce-code-duplication-for-authentication">Best Practice: Using python decorators to reduce code duplication for authentication</h2>
+
+<p>I realised that there was a lot of code duplication in my api in which I retrieved the jwt token from the cookies for every path and process to get user etc. So I went to search online and found that I could use python decorators <code class="language-plaintext highlighter-rouge">@auth_required</code> to abstract out all that logic into 1 reusable function. This made my code a lot more succint and readable.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Technical Dump</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Technical Dump</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

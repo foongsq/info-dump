@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>DevOps | Technical Dump</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="DevOps" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/DevOps.html" />
+<meta property="og:url" content="http://localhost:4000/DevOps.html" />
+<meta property="og:site_name" content="Technical Dump" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="DevOps" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/DevOps.html","headline":"DevOps","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Technical Dump" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Technical Dump</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/Backend.html">Backend</a><a class="page-link" href="/DevOps.html">DevOps</a><a class="page-link" href="/Frontend.html">Frontend</a><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">DevOps</h1>
+  </header>
+
+  <div class="post-content">
+    <ul id="markdown-toc">
+  <li><a href="#devops" id="markdown-toc-devops">DevOps</a>    <ul>
+      <li><a href="#different-environments" id="markdown-toc-different-environments">Different environments</a></li>
+    </ul>
+  </li>
+  <li><a href="#deployment" id="markdown-toc-deployment">Deployment</a>    <ul>
+      <li><a href="#continuous-deployment" id="markdown-toc-continuous-deployment">Continuous deployment</a>        <ul>
+          <li><a href="#virtualization-and-containerization" id="markdown-toc-virtualization-and-containerization">Virtualization and containerization</a></li>
+          <li><a href="#configuration-management" id="markdown-toc-configuration-management">Configuration management</a></li>
+        </ul>
+      </li>
+      <li><a href="#servers" id="markdown-toc-servers">Servers</a></li>
+      <li><a href="#cloud-computing" id="markdown-toc-cloud-computing">Cloud computing</a></li>
+      <li><a href="#concept-web-communication" id="markdown-toc-concept-web-communication">Concept: Web Communication</a></li>
+      <li><a href="#concept-web-hosting" id="markdown-toc-concept-web-hosting">Concept: Web hosting</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h1 id="devops">DevOps</h1>
+
+<p>DevOps is a set of practices that combines software development and IT operations. It aims to shorten the systems development life cycle and provide continuous delivery with high software quality.
+<a href="https://en.wikipedia.org/wiki/DevOps">Source</a></p>
+
+<p><img src="./images/devops.png" alt="DevOps" /></p>
+
+<p><strong>DevOps Automation: Continuous __</strong>
+<img src="./images/devops_overview.png" alt="DevOps Overview" /></p>
+
+<p><strong>CI/CD Pipeline</strong>
+<img src="./images/cicd_pipeline.png" alt="CICD Pipeline" /></p>
+
+<p><strong>DevOps Tools</strong>
+<img src="./images/devops_tools.png" alt="DevOps Tools" /></p>
+
+<p><a href="https://www.youtube.com/watch?v=JHoy3lDZOfY">Source</a></p>
+
+<h2 id="different-environments">Different environments</h2>
+<p><img src="./images/devops_environments.png" alt="DevOps Environments" /></p>
+
+<p>But because there are so many different environments, might cause the issue of the code working on one environment, but not working on another environment. Hence we put our code into containers which are isolated and standardized environments so as to ensure that the code working on one environment will be working on other environments. Dev side will put code into container and ops side will use the container and do what they need to do.</p>
+
+<h1 id="deployment">Deployment</h1>
+
+<p>All the code we write needs to be put onto a server, usually frontend code put onto one server, backend code put onto another server. A server is just a public computer. The act of putting a code onto a public computer is called deployment.</p>
+
+<h2 id="continuous-deployment">Continuous deployment</h2>
+
+<h3 id="virtualization-and-containerization">Virtualization and containerization</h3>
+
+<p>Solves issue of code running on one env and not on another env. Containers wrap your software together with its dependencies, allowing it to be run on any system. Packages software with OS-level wrapper, but is very lightweight in the size range of 50MBs, so it’s easy to send around and test. This is because it doesn’t use all the OS files, it only takes a portion of it that it needs.</p>
+
+<p><img src="./images/docker_vs_vm.png" alt="Docker VS VM" /></p>
+
+<p><strong>Installing Docker</strong>
+Instalation in Linux:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get update
+sudo apt-get install docker.io
+</code></pre></div></div>
+<p>Check that docker is installed: <code class="language-plaintext highlighter-rouge">docker --version</code></p>
+
+<p><strong>Docker Container Lifecycle:</strong></p>
+
+<p><img src="./images/docker_lifecycle.png" alt="Docker Container Lifecycle" /></p>
+
+<p>Docker Hub is a central repository, like Github for Docker images. Pull your docker image from the hub to your docker engine (your computer), with the docker image, you can run the image which makes it a container, stop and delete the docker image.</p>
+
+<p>We use docker on our own computer to package our entire application environment, and then save the image and push to docker hub and on our remote server, we install docker and pull the docker image, and run the container there. Similar things happen when we move between the Dev, QA, Stage, Prod stages.</p>
+
+<p><img src="./images/contained_in_docker.png" alt="Files contained on docker" /></p>
+
+<p><strong>Common Docker Operations:</strong></p>
+<ul>
+  <li>
+    <ul>
+      <li>Checking version: <code class="language-plaintext highlighter-rouge">docker --version</code>
+Pulling an image from docker hub: <code class="language-plaintext highlighter-rouge">sudo docker pull &lt;IMAGE NAME&gt;</code> (eg. <code class="language-plaintext highlighter-rouge">sudo docker pull ubuntu</code> to download an ubuntu image)</li>
+    </ul>
+  </li>
+  <li>List all docker images downloaded on your system: <code class="language-plaintext highlighter-rouge">docker images</code></li>
+  <li>Run image: <code class="language-plaintext highlighter-rouge">docker run &lt;IMAGE NAME&gt;</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">-it</code> flag: make terminal interactive</li>
+      <li><code class="language-plaintext highlighter-rouge">-d</code> flag: run the image as a daemon (means as a background)</li>
+      <li><code class="language-plaintext highlighter-rouge">-p &lt;EXTERNAL PORT&gt;:&lt;INTERNAL PORT&gt;</code> flag: do port mapping of internal port to external port</li>
+      <li>returns id of container that is running</li>
+    </ul>
+  </li>
+  <li>Stop running a container: <code class="language-plaintext highlighter-rouge">docker stop &lt;CONTAINER ID&gt;</code></li>
+  <li>List all containers running in the system: <code class="language-plaintext highlighter-rouge">docker ps</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">-a</code> flag: list all stopped containers</li>
+    </ul>
+  </li>
+  <li>For loggin into/accessing container: <code class="language-plaintext highlighter-rouge">docker exec &lt;CONTAINER ID&gt; &lt;TERMINAL&gt;</code> (eg. <code class="language-plaintext highlighter-rouge">sudo docker exec -it &lt;CONTAINER ID&gt; bash</code>)
+    <ul>
+      <li>Then we can run ubuntu commands and do whatever we want inside, as if its a VM</li>
+      <li><code class="language-plaintext highlighter-rouge">exit</code> to come out to host operating system</li>
+    </ul>
+  </li>
+  <li>Kill a container by stopping its execution immediately (like a force stop):  <code class="language-plaintext highlighter-rouge">docker kill &lt;CONTAINER ID&gt;</code></li>
+  <li>Delete a container: <code class="language-plaintext highlighter-rouge">docker rm &lt;CONTAINER ID&gt;</code></li>
+  <li>
+    <p>Remove an image from system: <code class="language-plaintext highlighter-rouge">docker rmi &lt;IMAGE ID&gt;</code></p>
+  </li>
+  <li>Create account on Docker Hub to save your docker images</li>
+  <li>When making changes inside the docker container, the changes will not be saved once your delete your docker image</li>
+  <li>Save changes, a new image is created: <code class="language-plaintext highlighter-rouge">docker commit &lt;CONTAINER ID&gt; &lt;NEW IMAGE NAME&gt;</code>, then run new image</li>
+</ul>
+
+<p><strong>Dockerfile:</strong></p>
+
+<p>For making changes to a docker container quickly. Automate using scripts (dockerfile)</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">FROM &lt;IMAGE&gt;</code>: specifies image you want to work on</li>
+  <li><code class="language-plaintext highlighter-rouge">RUN apt-get -y install apache2</code>: run commands in container</li>
+  <li><code class="language-plaintext highlighter-rouge">ADD &lt;FILES&gt; &lt;DIRECTORY INSIDE DOCKER&gt;</code>: to add files from external to internal</li>
+  <li><code class="language-plaintext highlighter-rouge">CMD apachectl -D FOREGROUND</code>: run command at the start of container</li>
+  <li><code class="language-plaintext highlighter-rouge">ENTRYPOINT apachectl -D FOREGROUND</code>: run command at the start of container (regardless of whether there are flags in docker run command)</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ENV &lt;KEY&gt; &lt;VALUE&gt;</code>: to set environment variables</p>
+  </li>
+  <li>Build docker file: <code class="language-plaintext highlighter-rouge">docker build . -t &lt;NAME OF NEW IMAGE CREATED FROM FILE&gt;</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">.</code> indicates where to build the dockerfile</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Docker Volumes:</strong></p>
+
+<p>Used to persist data across the lifetime of a container. Maps an outside directory to inside docker. (Like shared folder)</p>
+
+<p><strong>Container Orchestration:</strong></p>
+
+<p>All the containers held will be managed by docker itself. If container goes down, docker repairs and launches a new one in place of it.</p>
+
+<p>Docker Swarm is clustering and scheduling tool for Docker containers. With Swarm, IT admins and developers can manage a cluster of Docker nodes as a single virtual system. We have a leader and a few workers.</p>
+
+<h3 id="configuration-management">Configuration management</h3>
+
+<p>Other dependencies such as Docker, Python that needs to be downloaded on the server can be set up using a script.</p>
+
+<h2 id="servers">Servers</h2>
+
+<p>A server is a computer dedicated to provide specific services. Larger companies have 1 server dedicated for storing data, 1 server for serving web requests, 1 server for handling emails. But smaller companies usually have all 3 services on 1 server.</p>
+
+<p>Communicate between client and server or server and server through network.</p>
+
+<p>Desktop computers can’t act as server because of hardware limitations and also software limitations because the OS only can handle a limited number of concurrent connections. There are specialized processors and RAM and OSes like Linux, Windows Server, macOS server etc.</p>
+
+<p>Different types of servers: web server, database server, email server.</p>
+
+<p><a href="https://www.youtube.com/watch?v=UjCDWCeHCzY">Source</a></p>
+
+<h2 id="cloud-computing">Cloud computing</h2>
+
+<p>Traditionally, the physical servers are managed by individuals, organizations etc. If we wanted access to emails, we would have to maintain an email server. If there were any hardware or software issues with the server, it would need maintenance and might be hard to repair.</p>
+
+<p>Cloud computing is organizations that own lots of strong powerful servers in a data center, and offer them as a service. More cost efficient to use cloud usually.</p>
+
+<p>Efficient, reliable, scalable. Major cloud providers: Amazon Web Services, Microsoft Azure, Google Cloud Platform, IBM, Alibaba.</p>
+
+<p>Netflix uses AWS :O</p>
+
+<p>Different types of cloud computing: <strong>Infrastructure as a Service (Iaas)</strong> - you control software like applications, data, OS, middleware, runtime, while cloud provider control hardware like servers, virtualization, storage, networking etc. <strong>Platform as a service (Paas)</strong> - you only control applications and data, <strong>Software as a service (Saas)</strong> - everything on cloud provider, like google docs</p>
+
+<p><img src="./images/cloud_services.jpg" alt="Cloud Services" /></p>
+
+<p><a href="https://www.youtube.com/watch?v=_a6us8kaq0g">Source</a></p>
+
+<h2 id="concept-web-communication">Concept: Web Communication</h2>
+
+<p><strong>Why do we need a web server?</strong></p>
+
+<p>A web server like NGINX communicates with the outside world (ie. calling external api or backend api). The frontend code lives on the web server.</p>
+
+<p>Some browser requests (like html forms) don’t have simple responses, so the browser needs to invoke an external script to process the html form input to get a response. In reality, the browser tells the web server that it wants to process a html form, then the web server forks a process (which inherits parent’s environment variables, and executes the process to process a html form).</p>
+
+<p>When the browser generates html pages, NGINX passes it to gunicorn and flask, then flask will generate another page and send it to gunicorn, and sends it back to NGINX which sends it back to browser.</p>
+
+<p><img src="./images/web_communication.png" alt="Web Communication" /></p>
+
+<p><strong>Why do we need CGI and WSGI?</strong></p>
+
+<p>Its hard to have a standardized script because everyone names environment variables differently, so cannot just fetch based on env variable name. Hence Common Gateway Interface (CGI) was born, it standardizes the environment variables names and their purpose.</p>
+
+<p><img src="./images/cgi_egs.png" alt="Common Gateway Interface Examples" /></p>
+
+<p>WSGI takes it a step further to standardize the way that the script is called. There will be a python function defined in the wsgi.py file, the first param is cgi env variables (in a python dictionary), then the second is another function that must be called once inside the python function. The purpose of WSGI is to standardize the way that external scripts are executed by web servers. Flask supports WSGI, WSGI is a communication protocol, between client web application and also server code.</p>
+
+<p><strong>Why do we need an application server?</strong></p>
+
+<p>We need gunicorn because loading external scripts takes a long time. The bottleneck of processing requests is the time it takes for web server to load python binary from hard drive and starting a new process (forking).</p>
+
+<p><strong>Solution:</strong> pre-forking, starting the forking process when the web server is idle. Forking 3 times gives you 3 web server workers. Workers are in memory instances of python interpretor. pre-forking is web server functionality. NGINX cant prefork WSGI apps but can forward HTTP requests to another web server (gunicorn which understands HTTP requests) which can prefork your WSGI app.</p>
+
+<p><a href="https://www.youtube.com/watch?v=UklcIDgHtwQ">All you need to know about WSGI youtube video</a></p>
+
+<h2 id="concept-web-hosting">Concept: Web hosting</h2>
+
+<p>DNS server translates domain into an IP address, its a form of mapping.</p>
+
+<p>When a hosting provider allocates space on a web server for a website to store its files, they are hosting a website. Web hosting makes the files that comprise a website (code, images, etc.) available for viewing online. Every website you’ve ever visited is hosted on a server. (<a href="https://www.namecheap.com/hosting/what-is-web-hosting-definition/">Source</a>)</p>
+
+<p>The amount of space allocated on a server to a website depends on the type of hosting. The main types of hosting are shared, dedicated, VPS and reseller. They are differentiated by the kind of technology used for the server, the level of management provided and the additional services on offer.</p>
+
+<p>Basically when you have the code for the website, you need to put that code onto a publicly available computer (ie. a web server) so that people can access it, then you need to link that publicly available computer to a domain name.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Technical Dump</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Technical Dump</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

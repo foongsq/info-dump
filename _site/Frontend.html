@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Frontend | Technical Dump</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Frontend" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/Frontend.html" />
+<meta property="og:url" content="http://localhost:4000/Frontend.html" />
+<meta property="og:site_name" content="Technical Dump" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Frontend" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/Frontend.html","headline":"Frontend","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Technical Dump" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Technical Dump</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/Backend.html">Backend</a><a class="page-link" href="/DevOps.html">DevOps</a><a class="page-link" href="/Frontend.html">Frontend</a><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Frontend</h1>
+  </header>
+
+  <div class="post-content">
+    <ul id="markdown-toc">
+  <li><a href="#frontend" id="markdown-toc-frontend">Frontend</a>    <ul>
+      <li><a href="#vue-ecosystem" id="markdown-toc-vue-ecosystem">Vue Ecosystem</a></li>
+      <li><a href="#concept-caching-for-frontend" id="markdown-toc-concept-caching-for-frontend">Concept: Caching for frontend</a></li>
+      <li><a href="#design-decision-whether-to-use-vuex" id="markdown-toc-design-decision-whether-to-use-vuex">Design Decision: Whether to use Vuex</a></li>
+      <li><a href="#concept-vuex" id="markdown-toc-concept-vuex">Concept: Vuex</a></li>
+      <li><a href="#read-up-webpacks" id="markdown-toc-read-up-webpacks">Read up: Webpacks</a></li>
+      <li><a href="#read-up-code-splitting" id="markdown-toc-read-up-code-splitting">Read up: Code splitting</a></li>
+      <li><a href="#read-up-polyfills" id="markdown-toc-read-up-polyfills">Read up: Polyfills</a></li>
+      <li><a href="#nextjs" id="markdown-toc-nextjs">Next.js</a></li>
+      <li><a href="#typescript-vs-javascript" id="markdown-toc-typescript-vs-javascript">TypeScript VS Javascript</a></li>
+      <li><a href="#choice-of-design-system-material-ui-vs-chakra-ui" id="markdown-toc-choice-of-design-system-material-ui-vs-chakra-ui">Choice of design system: Material UI VS Chakra UI</a></li>
+      <li><a href="#best-practice-when-to-use-functional-components-and-class-components-in-react" id="markdown-toc-best-practice-when-to-use-functional-components-and-class-components-in-react">Best Practice: When to use functional components and class components in React</a></li>
+      <li><a href="#best-practice-before-react-hooks-react-render-props-pattern" id="markdown-toc-best-practice-before-react-hooks-react-render-props-pattern">Best practice (before react hooks): React render props pattern</a></li>
+      <li><a href="#best-practice-before-react-hooks-higher-order-component-pattern" id="markdown-toc-best-practice-before-react-hooks-higher-order-component-pattern">Best practice (before react hooks): Higher order component pattern</a></li>
+      <li><a href="#best-practice-react-context" id="markdown-toc-best-practice-react-context">Best practice: React context</a></li>
+      <li><a href="#best-practice" id="markdown-toc-best-practice">Best practice:</a></li>
+      <li><a href="#micro-frontend" id="markdown-toc-micro-frontend">Micro Frontend</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h1 id="frontend">Frontend</h1>
+
+<h2 id="vue-ecosystem">Vue Ecosystem</h2>
+
+<p><img src="https://github.com/foongsq/money-game/blob/master/docs/images/vue_ecosystem.png" alt="Vue Ecosystem" /></p>
+
+<h2 id="concept-caching-for-frontend">Concept: Caching for frontend</h2>
+
+<p>In my previous projects, I have come to realise that my websites have low performance (high latency) and I think that this is because I didn’t do any caching on the frontend. Hence I want to do frontend caching for this project to increase performance.</p>
+
+<p>Caching provides speedy navigation and greater control over what is stored by avoiding unnecessary requests to the backend. The purpose of caching is to reduce the number of interactions between frontend and backend. For example, when you need the list of store items in homepage and also in products page, we don’t want to be fetching the list of store items every time the user navigates from the homepage to the products page, so we cache it, and only fetch or update the cache when we update the data fetched. For my money game, there is nowhere the user can navigate to, hence caching will not benefit us in this aspect.</p>
+
+<h2 id="design-decision-whether-to-use-vuex">Design Decision: Whether to use Vuex</h2>
+
+<p><strong>(Theory)</strong> I have seen cases where people put all their API calls inside the Vuex store, and dont do API calls anywhere else. <a href="https://stackoverflow.com/questions/57710800/when-should-i-use-vuex">This stack overflow answer</a> says that the main purpose of using Vuex is to have a single source of truth for your data. Rather than allowing one particular component to update data directly, we delegate the updating of data to a separate module, the store. So any component using that data will be notified about the change. This helps to prevent cyclic update loops. But sometimes this pattern is overused because it doesnt make sense to keep data that is only used by one component in the store. Since no other component needs to know about any changes to the data, it should be managed in the component using it. Vuex is also great for enabling server side rendering.</p>
+
+<p><strong>Pros:</strong></p>
+<ul>
+  <li>Makes app easily extendible. Although it is unlikely that we will be extending on this app, we never know what could happen in the future, so I think that it is good to make the app as extendible as possible.</li>
+  <li>Can learn how to use Vuex for future more complex projects.</li>
+</ul>
+
+<p><strong>Cons:</strong></p>
+<ul>
+  <li>Greater implementation costs</li>
+  <li>Might seem redundant for this simple app</li>
+</ul>
+
+<h2 id="concept-vuex">Concept: Vuex</h2>
+
+<p>This diagram gives a good overview of how vuex works. This was taken from <a href="https://vuex.vuejs.org/#what-is-a-state-management-pattern">vuex official documentation</a>.
+<img src="https://github.com/foongsq/money-game/blob/master/docs/images/vuex_overview.png" alt="Vuex Overview" /></p>
+
+<h2 id="read-up-webpacks">Read up: Webpacks</h2>
+
+<p>According to <a href="https://en.wikipedia.org/wiki/Webpack">Wikipedia</a>, webpack is an open-source JavaScript module bundler. It is made primarily for JavaScript, but it can transform front-end assets such as HTML, CSS, and images if the corresponding loaders are included. webpack takes modules with dependencies and generates static assets representing those modules. Webpack takes the dependencies and generates a dependency graph allowing web developers to use a modular approach for their web application development purposes. It can be used from the command line, or can be configured using a configuration file which is named webpack.config.js. This file is used to define rules, plugins, etc., for a project. (webpack is highly extensible via rules which allow developers to write custom tasks that they want to perform when bundling files together.)</p>
+
+<p>So I believe that webpacks are a way of managing dependencies?</p>
+
+<p>At first, websites were small bundles of html,css and js files. But to make making websites easier, we introduces new libraries, frameworks and design patterns (like vue, react) to give developers a more powerful and simpler way of writing javascript applications. The drawback is the it creates large amounts of files which impacted storage and performance. So they started to provide mechanisms for splitting javascript programs up into separate modules that can be imported when needed. Some javascript libraries and frameworks that enable module usage is RequireJS, webpack, and babel. Modern browsers have also started to support module usage, by optimizing loading of modules, making it more efficient than having to use a library. (What’s the difference between using a library and modules?)</p>
+
+<h2 id="read-up-code-splitting">Read up: Code splitting</h2>
+
+<h2 id="read-up-polyfills">Read up: Polyfills</h2>
+
+<h2 id="nextjs">Next.js</h2>
+
+<p>Benefits of using Next.js:</p>
+<ul>
+  <li>Better performance, eg bundling, code splitting for faster page loads
+    <ul>
+      <li>Our attendance application handles a lot of data, and could benefit from the performance benefits of using Next.js.</li>
+    </ul>
+  </li>
+  <li>Search engine optimization
+    <ul>
+      <li>There’s not a lot of content in our application, and growing the usage of our application is not really the main goal of our project.</li>
+    </ul>
+  </li>
+  <li>Server-side rendering, pre-rendering of pages
+    <ul>
+      <li>Can have performance benefits, but learning curve and short timeline for project likely doesn’t justify the performance benefits</li>
+    </ul>
+  </li>
+  <li>Page based routing system
+    <ul>
+      <li>reported issues with dynamic routing, backend seems to want dynamic routing</li>
+    </ul>
+  </li>
+  <li>Built in CSS and Sass support</li>
+</ul>
+
+<h2 id="typescript-vs-javascript">TypeScript VS Javascript</h2>
+
+<p>Benefits of using TypeScript:</p>
+<ul>
+  <li>Can define prop types, reducing potential for bugs</li>
+  <li>Better code completion with jsx and better intellisense, auto import</li>
+  <li>More readable and confidence in code</li>
+</ul>
+
+<p>Costs:</p>
+<ul>
+  <li>Learning curve</li>
+  <li>third party libraries might not support typescript</li>
+  <li>Slightly longer compilation time</li>
+  <li>Need to write more code</li>
+</ul>
+
+<h2 id="choice-of-design-system-material-ui-vs-chakra-ui">Choice of design system: Material UI VS Chakra UI</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>UI component required</th>
+      <th>Material UI</th>
+      <th>Chakra UI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Form input (username, password, confirm password, text)</td>
+      <td>can do validation, have the basic form input boxes</td>
+      <td>I like how chakra ui has an editable component, that would be very useful, but we are not allowing people to edit the member names in this version, so i dont know how important that component would be. it has the basic input form boxes</td>
+    </tr>
+    <tr>
+      <td>Button</td>
+      <td>abit uglier because they capitalize the words by default</td>
+      <td>nicer buttons than material ui, can add icons and button loading state</td>
+    </tr>
+    <tr>
+      <td>Datepicker, select</td>
+      <td>Have datepicker (in mui lab) and nice dropdown</td>
+      <td>no built in datepicker, has basic dropdown</td>
+    </tr>
+    <tr>
+      <td>Tags (for member names)</td>
+      <td>called chips, has built in deletable prop</td>
+      <td>has tags and also built in deletable prop</td>
+    </tr>
+    <tr>
+      <td>Checkbox for attendance</td>
+      <td>have nice radio and checkboxes</td>
+      <td>have acceptable radio and checkboxes</td>
+    </tr>
+    <tr>
+      <td>Modal for forms</td>
+      <td>basic modal is a little ugly,, can consider using dialogs also</td>
+      <td>have nicer modals</td>
+    </tr>
+    <tr>
+      <td>Popup to instruct users to use the app</td>
+      <td>dont really have popup</td>
+      <td>can use tooltip for this</td>
+    </tr>
+    <tr>
+      <td>Table for attendance table</td>
+      <td>basic table looks okay, but need to style using styled function to customize color</td>
+      <td>seems similar to material ui table</td>
+    </tr>
+    <tr>
+      <td>Cards for attendance books</td>
+      <td>might be hard to use cards out of the box, might want to create own card component</td>
+      <td>doesn’t have card component… :(</td>
+    </tr>
+    <tr>
+      <td>Header?</td>
+      <td>can use app bar</td>
+      <td>don’t really have something i can use for header</td>
+    </tr>
+    <tr>
+      <td>Icons</td>
+      <td>has built in icons</td>
+      <td>also has built in icons</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Why Material UI:</p>
+<ul>
+  <li>It seems to be <a href="https://medium.com/swlh/create-a-customized-color-theme-in-material-ui-7205163e541f">easy to do color customization</a> in material ui also, which is often troublesome with most UI libraries.</li>
+  <li>In general it seems that the material UI components come with more features compared to chakra UI.</li>
+</ul>
+
+<p>Why Chakra UI:</p>
+<ul>
+  <li>Seems like Chakra UI can also do themes quite easily in a similar way as material ui, furthermore, chakra ui allows for <a href="https://chakra-ui.com/docs/features/css-variables">custom css to style the components, and allow css variables so we wont have to duplciate theme values</a>.</li>
+  <li>Chakra seems to be more focused on creation of flexible, composable and scalable code</li>
+  <li>Supposed to be easier to customize than material UI</li>
+</ul>
+
+<h2 id="best-practice-when-to-use-functional-components-and-class-components-in-react">Best Practice: When to use functional components and class components in React</h2>
+
+<p>Use functional components when it doesn’t need a state, use class when you need state. Use FC when they simply accept data and display them in some form (usually not interactive). But react hooks allow you to access state and all in functional components.</p>
+
+<h2 id="best-practice-before-react-hooks-react-render-props-pattern">Best practice (before react hooks): React render props pattern</h2>
+
+<p>Sharing code between react components using a prop whose value is a function.</p>
+
+<p>Traditionally, if we have 2 components that are similar, we can abstract it out by abstracting common logic (like state and methods), and placing it into a wrapper component into the state. This is passing a react component into a wrapper component as a prop. We do this when we want to abstract out common logic (methods) and state from 2 components with different styling. (This is when we can’t abstract out by changing the styling using props.)</p>
+
+<p><a href="https://www.youtube.com/watch?v=3IdCQ7QAs38">Video explaining render props pattern</a></p>
+
+<h2 id="best-practice-before-react-hooks-higher-order-component-pattern">Best practice (before react hooks): Higher order component pattern</h2>
+
+<p>If we have multiple component doing the same logic (increment count method, and count variable in state), but have slightly different displays, <code class="language-plaintext highlighter-rouge">Hovered X times</code> vs <code class="language-plaintext highlighter-rouge">Clicked X times</code> then a lot of code duplication. If both components have same parent component, we can simply lift the state of count into parent, and pass the handlers as props. But if they have different parents, will have duplicate state and handlers everywhere still.</p>
+
+<p>This one is basically adding a wrapper around the component which adds a specific function/feature to the original component. (eg. passing an additional prop) For reducing duplication, we would be putting the common logic into this higher order component. I think this is similar to react context, except that react context is for props and HOCs are for things like state and methods.</p>
+
+<h2 id="best-practice-react-context">Best practice: React context</h2>
+
+<p>Use react context to make a prop value available throughout everything wrapped within the context. (can use <code class="language-plaintext highlighter-rouge">useContext</code> hook to access it, in place of <code class="language-plaintext highlighter-rouge">Consumer</code> component)</p>
+
+<h2 id="best-practice">Best practice:</h2>
+
+<p>Use react hooks to abstract out common logic/state.</p>
+
+<p><a href="https://www.youtube.com/watch?v=TNhaISOUy6Q">Video explaining react hooks</a></p>
+
+<h2 id="micro-frontend">Micro Frontend</h2>
+
+<ul>
+  <li>increased reusability of components</li>
+  <li>separate one big frontend into many small apps
+    <ul>
+      <li>eg. each page could be its own app, served on a different localhost port</li>
+      <li>change webpack config to expose some shared components to be used by other apps</li>
+    </ul>
+  </li>
+  <li>make it easier for different teams to work on the same frontend</li>
+</ul>
+
+<p>*Organisms is most appropriate layer to share
+<img src="./images/atoms_molec_frontend.png" alt="Micro Frontend" /></p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Technical Dump</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Technical Dump</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
