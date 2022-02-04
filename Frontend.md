@@ -12,7 +12,7 @@ title: Frontend
 
 ## Vue Ecosystem
 
-![Vue Ecosystem](https://github.com/foongsq/money-game/blob/master/docs/images/vue_ecosystem.png)
+![Vue Ecosystem](./images/vue_ecosystem.png)
 
 ## Concept: Caching for frontend
 
@@ -35,7 +35,7 @@ Caching provides speedy navigation and greater control over what is stored by av
 ## Concept: Vuex
 
 This diagram gives a good overview of how vuex works. This was taken from [vuex official documentation](https://vuex.vuejs.org/#what-is-a-state-management-pattern).
-![Vuex Overview](https://github.com/foongsq/money-game/blob/master/docs/images/vuex_overview.png)
+![Vuex Overview](./images/vuex_overview.png)
 
 ## Read up: Webpacks
 
