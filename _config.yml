@@ -19,15 +19,13 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Technical Dump
-email: your-email@example.com
+email: edu.foongs@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  This website is where I put important technical takeaways and technology 
+  related opinion pieces. This is a safe space for us to geek out together :)
 baseurl: "/info-dump"
 url: "https://foongsq.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+github_username:  foongsq
 
 # Build settings
 theme: minima
