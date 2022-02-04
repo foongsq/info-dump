@@ -38,7 +38,75 @@ All the code we write needs to be put onto a server, usually frontend code put o
 
 ### Virtualization and containerization
 
-Solves issue of code running on one env and not on another env. Containers wrap your software together with its dependencies, allowing it to be run on any system.
+Solves issue of code running on one env and not on another env. Containers wrap your software together with its dependencies, allowing it to be run on any system. Packages software with OS-level wrapper, but is very lightweight in the size range of 50MBs, so it's easy to send around and test. This is because it doesn't use all the OS files, it only takes a portion of it that it needs.
+
+![Docker VS VM](./images/docker_vs_vm.png)
+
+**Installing Docker**
+Instalation in Linux:
+
+```
+sudo apt-get update
+sudo apt-get install docker.io
+```
+Check that docker is installed: `docker --version`
+
+**Docker Container Lifecycle:**
+
+![Docker Container Lifecycle](./images/docker_lifecycle.png)
+
+Docker Hub is a central repository, like Github for Docker images. Pull your docker image from the hub to your docker engine (your computer), with the docker image, you can run the image which makes it a container, stop and delete the docker image.
+
+We use docker on our own computer to package our entire application environment, and then save the image and push to docker hub and on our remote server, we install docker and pull the docker image, and run the container there. Similar things happen when we move between the Dev, QA, Stage, Prod stages.
+
+![Files contained on docker](./images/contained_in_docker.png)
+
+**Common Docker Operations:**
+- - Checking version: `docker --version`
+Pulling an image from docker hub: `sudo docker pull <IMAGE NAME>` (eg. `sudo docker pull ubuntu` to download an ubuntu image)
+- List all docker images downloaded on your system: `docker images`
+- Run image: `docker run <IMAGE NAME>`
+  - `-it` flag: make terminal interactive
+  - `-d` flag: run the image as a daemon (means as a background)
+  - `-p <EXTERNAL PORT>:<INTERNAL PORT>` flag: do port mapping of internal port to external port
+  - returns id of container that is running
+- Stop running a container: `docker stop <CONTAINER ID>`
+- List all containers running in the system: `docker ps`
+  - `-a` flag: list all stopped containers
+- For loggin into/accessing container: `docker exec <CONTAINER ID> <TERMINAL>` (eg. `sudo docker exec -it <CONTAINER ID> bash`)
+  - Then we can run ubuntu commands and do whatever we want inside, as if its a VM
+  - `exit` to come out to host operating system
+- Kill a container by stopping its execution immediately (like a force stop):  `docker kill <CONTAINER ID>`
+- Delete a container: `docker rm <CONTAINER ID>`
+- Remove an image from system: `docker rmi <IMAGE ID>`
+
+- Create account on Docker Hub to save your docker images
+- When making changes inside the docker container, the changes will not be saved once your delete your docker image
+- Save changes, a new image is created: `docker commit <CONTAINER ID> <NEW IMAGE NAME>`, then run new image
+
+**Dockerfile:**
+
+For making changes to a docker container quickly. Automate using scripts (dockerfile)
+
+- `FROM <IMAGE>`: specifies image you want to work on
+- `RUN apt-get -y install apache2`: run commands in container
+- `ADD <FILES> <DIRECTORY INSIDE DOCKER>`: to add files from external to internal
+- `CMD apachectl -D FOREGROUND`: run command at the start of container 
+- `ENTRYPOINT apachectl -D FOREGROUND`: run command at the start of container (regardless of whether there are flags in docker run command)
+- `ENV <KEY> <VALUE>`: to set environment variables
+
+- Build docker file: `docker build . -t <NAME OF NEW IMAGE CREATED FROM FILE>`
+  - `.` indicates where to build the dockerfile
+
+**Docker Volumes:**
+
+Used to persist data across the lifetime of a container. Maps an outside directory to inside docker. (Like shared folder)
+
+**Container Orchestration:**
+
+All the containers held will be managed by docker itself. If container goes down, docker repairs and launches a new one in place of it.
+
+Docker Swarm is clustering and scheduling tool for Docker containers. With Swarm, IT admins and developers can manage a cluster of Docker nodes as a single virtual system. We have a leader and a few workers.
 
 ### Configuration management
 
@@ -68,6 +136,8 @@ Netflix uses AWS :O
 
 Different types of cloud computing: **Infrastructure as a Service (Iaas)** - you control software like applications, data, OS, middleware, runtime, while cloud provider control hardware like servers, virtualization, storage, networking etc. **Platform as a service (Paas)** - you only control applications and data, **Software as a service (Saas)** - everything on cloud provider, like google docs
 
+![Cloud Services](./images/cloud_services.jpg)
+
 [Source](https://www.youtube.com/watch?v=_a6us8kaq0g)
 
 ## Concept: Web Communication
@@ -96,6 +166,8 @@ We need gunicorn because loading external scripts takes a long time. The bottlen
 
 **Solution:** pre-forking, starting the forking process when the web server is idle. Forking 3 times gives you 3 web server workers. Workers are in memory instances of python interpretor. pre-forking is web server functionality. NGINX cant prefork WSGI apps but can forward HTTP requests to another web server (gunicorn which understands HTTP requests) which can prefork your WSGI app.
 
+[All you need to know about WSGI youtube video](https://www.youtube.com/watch?v=UklcIDgHtwQ)
+
 ## Concept: Web hosting
 
 DNS server translates domain into an IP address, its a form of mapping.
@@ -106,10 +178,15 @@ The amount of space allocated on a server to a website depends on the type of ho
 
 Basically when you have the code for the website, you need to put that code onto a publicly available computer (ie. a web server) so that people can access it, then you need to link that publicly available computer to a domain name.
 
-## Concept: Containerization in Web development
+# Frontend
 
-Containers isolate software from its environment and ensure that it works uniformly despite differences (eg. between development and production) ([Source](https://www.docker.com/resources/what-container)) Containers are a solution to the problem of how to get software to run reliably when moved from one computing environment to another. (eg. from physical machine to virtual machine in cloud)
+## Micro Frontend
 
-## References
-- [All you need to know about WSGI youtube video](https://www.youtube.com/watch?v=UklcIDgHtwQ)
+- increased reusability of components
+- separate one big frontend into many small apps
+  - eg. each page could be its own app, served on a different localhost port
+  - change webpack config to expose some shared components to be used by other apps
+- make it easier for different teams to work on the same frontend
 
+*Organisms is most appropriate layer to share
+![Micro Frontend](./images/atoms_molec_frontend.png)
