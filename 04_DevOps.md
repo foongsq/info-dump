@@ -8,8 +8,6 @@ permalink: /devops/
 
 --------------------------------------------------------------------------------------------------------------------
 
-# DevOps
-
 DevOps is a set of practices that combines software development and IT operations. It aims to shorten the systems development life cycle and provide continuous delivery with high software quality.
 [Source](https://en.wikipedia.org/wiki/DevOps)
 
@@ -140,6 +138,10 @@ Different types of cloud computing: **Infrastructure as a Service (Iaas)** - you
 ![Cloud Services](./images/cloud_services.jpg)
 
 [Source](https://www.youtube.com/watch?v=_a6us8kaq0g)
+
+## Load balancing
+
+Load balancing is for distributing network traffic across multiple backend servers. I guess this is for larger websites that scale up enough to require multiple backend servers. But right now I don't think this is very applicable to my application. (Maybe this is done during deployment? The place I deploy my server to will do load balancing?)
 
 ## Concept: Web Communication
 
