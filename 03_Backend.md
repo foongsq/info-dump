@@ -43,6 +43,9 @@ This is to make it easier for frontend developers to debug.
 - Exposes only 1 entry point, client defines how data should be received. (give a lot of flexibility)
 - Should not be used for simple things
 
+## Thrift API
+
+Related to microservices I think...
 
 # Python API development
 

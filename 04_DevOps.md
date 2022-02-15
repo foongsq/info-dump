@@ -29,6 +29,63 @@ DevOps is a set of practices that combines software development and IT operation
 
 But because there are so many different environments, might cause the issue of the code working on one environment, but not working on another environment. Hence we put our code into containers which are isolated and standardized environments so as to ensure that the code working on one environment will be working on other environments. Dev side will put code into container and ops side will use the container and do what they need to do.
 
+## Release Management Strategies
+
+Release management is the process of managing, planning, scheduling and controlling a software build through different stages and environments; including testing and deploying software releases.
+
+We need it because it is hard to estimate time that software is delivered. When dev team hands over software to QA, features might pile up on QA side. Dev team might also hand over hotfixes to QA which were not planned to be released. Then QA might find bugs in the feature and pass back to dev team to fix. So passing to and fro of the software between QA and dev makes it hard to predict when a feature will be released and to manage releases.
+
+Goal is to deliver value to customers on time, and to make handover between the tech team and the ops teams better.
+
+### Slow Cadence
+
+A release window is a period of time during which one or more teams may release into production. (Eg. 1am-5am on Saturday morning) A release slot is subset within that release window during which a team may deploy their solution into production. Tends to be less frequent, either weekly, monthly etc.
+
+Advantages:
+- Consistent release cadence to business stakeholders
+- Predictable release date targets for delivery teams
+
+Disadvantages
+- Dev teams are constrained to a common release schedule and its hard to implement auto delivery strategies (continuous delivery)
+
+### Release train
+
+Every team involved that in that train has the same release cadence. More common in large programs. If you miss the train, need to wait for next train. Disadvantage: bottleneck problems same as slow cadence.
+
+### Quick Cadence
+
+Many release windows and many release slots. Less prone to bottleneck challenges.
+
+### Continuous release availability
+
+Only model allowing continuous delivery. Teams can release deatures into production whenever needed. Several devops practices need to be implemented: 
+- Fully automated deployment
+- Fully automated regression testing
+- Feature toggles
+- Self-recovering components
+
+[DevOps Release Management Video](https://www.youtube.com/watch?v=vlsLxaY4P7M&t=619s)
+
+## Devops techniques for release management
+
+### Infrastructure as Code (Configuration management)
+
+Avoid manual configuration of infrastructure, because error prone. Harder to track also. Manages and configures servers through scripts. Devops team provides infrastructure config code, and can be in git repo too. Leads to more reliable releases. Allows for a more repeatable release process, can run in different environments. Disaster recovery also easier. Script tells how a server is configured and can see how it changed over time.
+
+**Tools:** Chef, puppet, ansible etc
+
+### Destroy all your servers, all the time
+
+What to do when server crashes and we lose our environment. If environment is manually configured, hard to restore. Common problem associated with server management: **Configuration drift**. Actual configuration of server changes over time due to making changes, is a given using manual configuration, but can also happen when automated. How do we know a single run of our configuration script can put our servers into a known state? The only way to do this is to destroy our servers on purpose, as part of regular maintenance. We should also deploy servers as virtual machines so that they are easy to redeploy. This is referred to as Phoenix servers. => ensures that our config scripts are up to date.
+
+### Zero in on zero downtime development
+
+Blue/Green deployment: Have 2 identical deployments, set all routing (through load balancer) to active server, then run config scripts on passive server. Can simply use load balancer to redirect traffic to new environment with latest changes. So the userbase will experience no downtime in services.
+
+![Blue Green Deployment](./images/bluegreen_deployment.png)
+
+[DevOps Release Management Video](https://www.youtube.com/watch?v=vlsLxaY4P7M&t=619s)
+
 # Deployment
 
 All the code we write needs to be put onto a server, usually frontend code put onto one server, backend code put onto another server. A server is just a public computer. The act of putting a code onto a public computer is called deployment.
