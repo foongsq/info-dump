@@ -4,8 +4,9 @@ title:  "Linux Operating System"
 date:   2022-02-04 11:46:07 +0800
 categories: jekyll update
 ---
-
-![Linux](../images/linux.jpg)
+{:refdef: style="text-align: center;"}
+    ![Linux](/images/linux.jpg)
+{:refdef}
 
 I have recently used the Linux operating system as a development environment and I realised just how convenient it is to download softwares on it. It takes me literally 10mins to set up a development environment on Linux, whereas I would always have to fumble over the multitude of installation steps in windows. When installing software on windows, I would often find myself having to configure settings that I'm not even sure about, and at the end of the installation, the software often doesn't work how I expect it to work and I would have to trouble shoot to find out the issue. However on Linux, it's as easy as typing a command on the command line and there are minimal manual configurations to be done.
 
